@@ -1,5 +1,6 @@
 # Product_Recommender_System
-This self-project involves creating and deployment of ResNET50 CNN using streamlit. Once an image is uploaded on the respective website, automatic 5 closest suggestions are provided to the user.
+This self-project involves creating and deployment of recommender system using streamlit and ResNET50 CNN model. 
+Once an Image gets uploaded to the created website, top 5 closest products will be recommended to the user automatically.
 
 # **Plan Of Attack:**
 
