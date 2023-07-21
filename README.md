@@ -1,13 +1,18 @@
-# Product_Recommender_System
-This self-project involves creating and deployment of recommender system using streamlit and ResNET50 CNN model. 
-Once an Image gets uploaded to the created website, top 5 closest products will be recommended to the user automatically.
+Product Recommender System
 
-# **Plan Of Attack:**
+This self-initiated project entails the creation and deployment of a product recommender system using Streamlit and the ResNet50 Convolutional Neural Network (CNN) model. The system allows users to upload an image to the dedicated website, and based on this input, the system automatically recommends the top 5 products that closely resemble the uploaded image.
+Plan of Approach:
 
-1) ***IMPORT MODEL*** : we are going to use ResNET CNN model for this project. ResNET model is already trained model, made by many computer scientists and data scientists which is trained on various Images from IMAGENET with very great accuracy and hence we use it. We could have used our own CNN but that would have not gived us the accuracy as high as ResNET.
+    Import Model: For this project, we leverage the power of the ResNet CNN model. ResNet is a well-established pre-trained model developed by computer scientists and data scientists. It has been trained on a vast dataset of various images from IMAGENET, boasting remarkable accuracy. Employing ResNet ensures superior performance, surpassing what could be achieved with a custom CNN.
 
-2) ***EXTRACT FEATURES:*** We are going to have image of (224,224,3) resolution image for which we have to find matches for suggesting similar products. ResNET has trained on 44k images and hence we need to compare the uploaded image with all those 44k images pixels by pixels in order to find the similar products. since this becomes near to impossible task, hence we go for comparing primitive or complex features of all the 44k images with the features obtained for the uploaded image (features will be extracted by our ResNET CNN model for both 44k images and uploaded one). Comparing features makes the task easy as we are in total going to have 2048 features for each of the images. Therefore what we will have is a matrix of size (44k x 2048) where rows are all the 44k images on which ResNET is trained and (1 x 2048) vector for uploaded image.
+    Extract Features: The recommender system requires an image of (224, 224, 3) resolution to find matching products for recommendations. However, manually comparing the uploaded image with all 44,000 images used to train ResNet is infeasible. Instead, we extract primitive or complex features from both the 44,000 images and the uploaded image using our ResNet CNN model. By comparing these extracted features, the task becomes manageable. Each image will be represented by a feature vector containing 2048 features. Consequently, we will have a feature matrix of size (44,000 x 2048), with rows corresponding to all the images ResNet was trained on, and a (1 x 2048) feature vector for the uploaded image.
 
-3) ***GENERATE RECOMMONDATIONS:*** In order to generate recommondations we are going to calculate euclidian distance (knn will be used from sklearn to calculate the distance) for all the rows of the feature matrix with the feature vector we got for uploaded image. Whichever rows have closest distance with the feature vector, they will be considered as our recommondations and will be shown to user.
+    Generate Recommendations: The recommender system calculates the Euclidean distance between the feature vector of the uploaded image and the feature vectors of all the images in the feature matrix. We utilize k-nearest neighbors (knn) from the scikit-learn library to perform this distance calculation. The rows with the closest distances to the feature vector of the uploaded image are considered our recommendations and are presented to the user.
 
-Dataset used: Fashion Product Images Dataset (kaggle).
+Dataset Used: Fashion Product Images Dataset (Kaggle)
+
+The dataset employed in this project is the Fashion Product Images Dataset obtained from Kaggle. This dataset serves as an essential foundation for training and evaluating the product recommender system, enhancing its ability to suggest relevant and visually similar products to the users.
+
+By leveraging the capabilities of Streamlit, ResNet, and k-nearest neighbors, this product recommender system promises an engaging and user-friendly experience for discovering top product recommendations based on user-uploaded images.
+
+Your feedback and contributions are most welcome, as we continuously strive to improve and enhance the performance and user experience of this product recommender system.
